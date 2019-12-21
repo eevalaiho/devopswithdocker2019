@@ -3,15 +3,15 @@ Eeva-Maria Laiho
 
 # Part 1
 
-# 1.1
+## 1.1
 
 ![Exercise 1.1](1.1.PNG)
 
-# 1.2
+## 1.2
 
 ![Exercise 1.2](1.2.PNG)
 
-# 1.3
+## 1.3
 
 To start the container:
 ```$ docker run -it devopsdockeruh/pull_exercise```
@@ -24,7 +24,7 @@ You found the correct password. Secret message is:
 "This is the secret message"
 ```
 
-# 1.4
+## 1.4
 
 To start the container
 ```$ docker run -d --name bashex devopsdockeruh/exec_bash_exercise```
@@ -38,3 +38,9 @@ To tail the log
 This will print the secret message ```"Docker is easy"``` along with some timestamps.
 
 To exit tailing and the container ```Ctrl+C``` and ```Ctrl+P, Ctrl+Q```
+
+
+## 1.5 
+
+To start the container
+```$ docker run -d -it --name ubu ubuntu:16.04 sh -c 'echo "Input website:"; read website; echo "Searching ..."; sleep 1; curl http://$website; done'```
