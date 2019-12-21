@@ -1,4 +1,5 @@
-# Dev Ops with Docker 2019
+### DevOps with Docker
+Eeva-Maria Laiho
 
 [Part 1](./part1/readme.md)
 
