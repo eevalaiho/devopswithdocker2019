@@ -18,7 +18,7 @@ To start the container:
 
 The script asks for password, that is ```basic```.
 
-The script then prints:
+After typing the password the script prints:
 ```
 You found the correct password. Secret message is:
 "This is the secret message"
