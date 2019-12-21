@@ -5,4 +5,4 @@ Eeva-Maria Laiho
 
 # 1.1
 
-![Exercise 1.1](./1.1.png)
+![Exercise 1.1](1.1.png)
