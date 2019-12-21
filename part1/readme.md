@@ -14,3 +14,7 @@ Eeva-Maria Laiho
 # 1.3
 
 ![Exercise 1.3](1.3.PNG)
+
+# 1.4
+
+```$ docker run -d --name bash devopsdockeruh/exec_bash_exercise```
