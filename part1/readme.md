@@ -6,3 +6,7 @@ Eeva-Maria Laiho
 # 1.1
 
 ![Exercise 1.1](1.1.PNG)
+
+# 1.2
+
+![Exercise 1.2](1.2.PNG)
