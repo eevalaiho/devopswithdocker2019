@@ -35,18 +35,6 @@ To go inside the container
 To tail the log
 ```$ tail -f ./logs.txt```
 
-Which will print:
-```
-"Docker is easy"
-Sat, 21 Dec 2019 06:59:55 GMT
-Sat, 21 Dec 2019 06:59:58 GMT
-Sat, 21 Dec 2019 07:00:01 GMT
-Sat, 21 Dec 2019 07:00:04 GMT
-Secret message is:
-"Docker is easy"
-Sat, 21 Dec 2019 07:00:10 GMT
-Sat, 21 Dec 2019 07:00:13 GMT
-Sat, 21 Dec 2019 07:00:16 GMT
-Sat, 21 Dec 2019 07:00:19 GMT
-```
+This will print the secret message ```"Docker is easy"``` along with some timestamps.
+
 To exit tailing and the container ```Ctrl+C``` and ```Ctrl+P, Ctrl+Q```
