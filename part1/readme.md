@@ -65,9 +65,7 @@ Attach to the container:
 
 ```$ docker attach ex1.5```
 
-Get and print http://www.helsinki.fi content: 
-
-```www.helsinki.fi```
+To get and print http://helsinki.fi content type ```helsinki.fi```.
 
 Exit: 
 
