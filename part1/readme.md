@@ -75,6 +75,15 @@ Exit:
 
 ## 1.6
 
+Dockerfile:
+```
+FROM devopsdockeruh/overwrite_cmd_exercise
 
+CMD ["--clock"]
+```
+
+Build the image:
+
+```$ docker build -t docker-clock .```
 
 
