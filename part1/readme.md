@@ -86,4 +86,8 @@ Build the image:
 
 ```$ docker build -t docker-clock .```
 
+Run the container:
+
+```$ docker run docker-clock```
+
 
