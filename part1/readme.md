@@ -26,23 +26,55 @@ You found the correct password. Secret message is:
 
 ## 1.4
 
-Start the container: ```docker run -d --name bashex devopsdockeruh/exec_bash_exercise```
+Start the container: 
 
-Go inside the container: ```docker exec -it bashex bash```
+```docker run -d --name bashex devopsdockeruh/exec_bash_exercise```
 
-Tail the log: ```tail -f ./logs.txt```
+Go inside the container: 
 
-The secret message is: ```"Docker is easy"```.
+```docker exec -it bashex bash```
 
-Exit: ```Ctrl+C``` and ```Ctrl+P, Ctrl+Q```
+Tail the log: 
+
+```tail -f ./logs.txt```
+
+The secret message is: 
+
+```"Docker is easy"```.
+
+Exit: 
+
+```Ctrl+C``` and ```Ctrl+P, Ctrl+Q```
 
 
 ## 1.5 
 
-Create the container: ```docker run -d -it --name ex1.5 ubuntu:16.04 sh -c "echo 'Input website:'; read website; echo 'Searching ...'; sleep 1; curl http://$website"```
+Create the container: 
 
-Start the container: ```docker start ex1.5```
+```$ docker run -d -it --name ex1.5 ubuntu:16.04 sh -c "echo 'Input website:'; read website; echo 'Searching ...'; sleep 1; curl http://$website"```
 
-Attach to the ontainer: ```docker attach ex1.5```
+Install curl:
 
-Install curl: 
+```$ docker exec ex1.5 apt-get -qq update``` and ```$ docker exec ex1.5 apt-get -y -qq install curl```
+
+Start the container with the shell process: 
+
+```$ docker start ex1.5```
+
+Attach to the container: 
+
+```$ docker attach ex1.5```
+
+Get and print http://www.helsinki.fi content: 
+
+```www.helsinki.fi```
+
+Exit: 
+
+```Ctrl+C``` and ```Ctrl+P, Ctrl+Q```
+
+
+
+
+
+
