@@ -14,7 +14,7 @@ Eeva-Maria Laiho
 ## 1.3
 
 To start the container:
-```$ docker run -it devopsdockeruh/pull_exercise```
+```docker run -it devopsdockeruh/pull_exercise```
 
 The script asks for password, that is ```basic```.
 
@@ -26,21 +26,23 @@ You found the correct password. Secret message is:
 
 ## 1.4
 
-To start the container
-```$ docker run -d --name bashex devopsdockeruh/exec_bash_exercise```
+Start the container: ```docker run -d --name bashex devopsdockeruh/exec_bash_exercise```
 
-To go inside the container
-```$ docker exec -it bashex bash```
+Go inside the container: ```docker exec -it bashex bash```
 
-To tail the log
-```$ tail -f ./logs.txt```
+Tail the log: ```tail -f ./logs.txt```
 
-This will print the secret message ```"Docker is easy"``` along with some timestamps.
+The secret message is: ```"Docker is easy"```.
 
-To exit tailing and the container ```Ctrl+C``` and ```Ctrl+P, Ctrl+Q```
+Exit: ```Ctrl+C``` and ```Ctrl+P, Ctrl+Q```
 
 
 ## 1.5 
 
-To start the container
-```$ docker run -d -it --name ubu ubuntu:16.04 sh -c 'echo "Input website:"; read website; echo "Searching ..."; sleep 1; curl http://$website; done'```
+Create the container: ```docker run -d -it --name ex1.5 ubuntu:16.04 sh -c "echo 'Input website:'; read website; echo 'Searching ...'; sleep 1; curl http://$website"```
+
+Start the container: ```docker start ex1.5```
+
+Attach to the ontainer: ```docker attach ex1.5```
+
+Install curl: 
