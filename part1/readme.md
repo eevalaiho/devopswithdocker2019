@@ -75,7 +75,7 @@ Exit:
 
 ## 1.6
 
-Dockerfile:
+Contents of the Dockerfile:
 ```
 FROM devopsdockeruh/overwrite_cmd_exercise
 
@@ -89,5 +89,27 @@ Build the image:
 Run the container:
 
 ```$ docker run docker-clock```
+
+
+## 1.7
+
+Contents of the Dockerfile:
+```
+FROM ubuntu:16.04 
+
+WORKDIR /mydir
+RUN apt-get update && apt-get install -y curl
+
+CMD echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website;
+```
+
+Build the image:
+
+```$ docker build -t curler .```
+
+Run the container:
+
+```$ docker run -it curler```
+
 
 
