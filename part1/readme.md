@@ -114,11 +114,34 @@ Run the container:
 
 ## 1.8
 
+Create ```logs.txt``` file in ```$(pwd)``` folder (on host).
+
 Run the container:
 
 ```
-docker run -v $(pwd)/logs.txt:/usr/app/logs.txt devopsdockeruh/first_volume_exercise 
+$ docker run -v $(pwd)/logs.txt:/usr/app/logs.txt devopsdockeruh/first_volume_exercise 
 ```
+
+The secret (printed in logs.txt) message:
+
+```
+Secret message is:
+"Volume bind mount is easy"
+```
+
+## 1.9
+
+Run the container:
+
+```
+$ docker run -p 8080:80 devopsdockeruh/ports_exercise 
+```
+
+Browse to ```http://localhost:8080```. The container responds with message ```Ports configured correctly!!```.
+
+
+
+
 
 
 
