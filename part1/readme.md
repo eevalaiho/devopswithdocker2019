@@ -143,17 +143,16 @@ The container responds with message ```Ports configured correctly!!```.
 
 ## 1.10
 
-
 Build the container:
 
 ```
-$ docker build -t frontex .
+$ docker build -t frontend .
 ```
 
 Run the container with port 5000 attached to:
 
 ```
-$ docker run -p 5000:5000 -it frontex 
+$ docker run -p 5000:5000 -it frontend
 ```
 
 Browse to ```http://localhost:5000```. 
@@ -166,7 +165,7 @@ Dockerfile:
 ```
 FROM ubuntu:16.04 
 
-WORKDIR /home/laihoeev/dowd/part1/
+WORKDIR /webapp
 
 # Install prerequisites
 RUN apt-get update && apt-get install -y curl
@@ -182,6 +181,55 @@ RUN cd frontend-example-docker && npm install
 # When container is started start node
 CMD cd frontend-example-docker && npm start
 ```
+
+
+
+## 1.11
+
+Build the container:
+
+```
+$ docker build -t backend .
+```
+
+Run the container with port 8000 attached to:
+
+```
+$ docker run -it -v $(pwd):/webapp -p 8000:8000 backex
+```
+
+Browse to ```http://localhost:8000```. 
+
+The container responds with Webpack App front page.
+
+Dockerfile:
+
+```
+FROM ubuntu:16.04 
+
+WORKDIR /webapp
+
+# Install prerequisites
+RUN apt-get update && apt-get install -y curl
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash && apt install -y nodejs
+
+# Check install
+RUN node -v && npm -v
+
+# Copy webapp directory from host to container and install packages 
+COPY backend-example-docker backend-example-docker
+RUN cd backend-example-docker && npm install
+
+# When container is started start node
+CMD cd backend-example-docker && npm start
+
+```
+
+
+
+
+
+
 
 
 
