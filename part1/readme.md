@@ -137,7 +137,9 @@ Run the container:
 $ docker run -p 8080:80 devopsdockeruh/ports_exercise 
 ```
 
-Browse to ```http://localhost:8080```. The container responds with message ```Ports configured correctly!!```.
+Browse to ```http://localhost:8080```. 
+
+The container responds with message ```Ports configured correctly!!```.
 
 
 
