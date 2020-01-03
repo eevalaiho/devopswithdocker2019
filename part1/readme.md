@@ -192,15 +192,15 @@ Build the container:
 $ docker build -t backex .
 ```
 
-Run the container with port 8000 and logs.txt attached to:
+Run the container with port 8000 and volume logs.txt attached to it:
 
 ```
-$ docker run -it -v $(pwd)/backend-example-docker/logs.txt:/backend-example-docker/logs.txt -p 8000:8000 backex
+$ sudo docker run -it -v $(pwd)/logs.txt:/webserver/backend-example-docker/logs.txt -p 8000:8000 backex
 ```
 
 Browse to ```http://localhost:8000```. 
 
-The container responds with Webpack App front page.
+The container responds with message 'Port configured correctly, generated message in logs.txt'. The logs.txt file is appended with timestamp and connection received message. 
 
 Dockerfile:
 
