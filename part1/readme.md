@@ -112,4 +112,14 @@ Run the container:
 ```$ docker run -it curler```
 
 
+## 1.8
+
+Run the container:
+
+```
+docker run -v $(pwd)/logs.txt:/usr/app/logs.txt devopsdockeruh/first_volume_exercise 
+```
+
+
+
 
