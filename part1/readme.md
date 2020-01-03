@@ -146,13 +146,13 @@ The container responds with message ```Ports configured correctly!!```.
 Build the container:
 
 ```
-$ docker build -t frontend .
+$ docker build -t frontex .
 ```
 
 Run the container with port 5000 attached to:
 
 ```
-$ docker run -p 5000:5000 -it frontend
+$ docker run -p 5000:5000 -it frontex
 ```
 
 Browse to ```http://localhost:5000```. 
@@ -189,7 +189,7 @@ CMD cd frontend-example-docker && npm start
 Build the container:
 
 ```
-$ docker build -t backend .
+$ docker build -t backex .
 ```
 
 Run the container with port 8000 attached to:
