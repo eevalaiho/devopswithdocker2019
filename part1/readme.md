@@ -207,7 +207,7 @@ Dockerfile:
 ```
 FROM ubuntu:16.04 
 
-WORKDIR /
+WORKDIR /webserver
 
 # Install prerequisites
 RUN apt-get update && apt-get install -y curl
@@ -222,7 +222,6 @@ RUN cd backend-example-docker && npm install
 
 # When container is started start node
 CMD cd backend-example-docker && npm start
-
 ```
 
 
