@@ -192,10 +192,10 @@ Build the container:
 $ docker build -t backex .
 ```
 
-Run the container with port 8000 attached to:
+Run the container with port 8000 and logs.txt attached to:
 
 ```
-$ docker run -it -v $(pwd):/webapp -p 8000:8000 backex
+$ docker run -it -v $(pwd)/backend-example-docker/logs.txt:/backend-example-docker/logs.txt -p 8000:8000 backex
 ```
 
 Browse to ```http://localhost:8000```. 
@@ -207,7 +207,7 @@ Dockerfile:
 ```
 FROM ubuntu:16.04 
 
-WORKDIR /webapp
+WORKDIR /
 
 # Install prerequisites
 RUN apt-get update && apt-get install -y curl
