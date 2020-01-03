@@ -153,7 +153,7 @@ $ docker build -t frontex .
 Run the container with port 5000 attached to:
 
 ```
-$ docker run -p 5000:5000 frontex 
+$ docker run -p 5000:5000 -it frontex 
 ```
 
 Browse to ```http://localhost:5000```. 
