@@ -150,6 +150,38 @@ Build the container:
 $ docker build -t frontex .
 ```
 
+Run the container with port 5000 attached to:
+
+```
+$ docker run -p 5000:5000 frontex 
+```
+
+Browse to ```http://localhost:5000```. 
+
+The container responds with Webpack App front page.
+
+
+Dockerfile:
+
+```
+FROM ubuntu:16.04 
+
+WORKDIR /home/laihoeev/dowd/part1/ex10/
+
+# Install prerequisites
+RUN apt-get update && apt-get install -y curl
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash && apt install -y nodejs
+
+# Check install
+RUN node -v && npm -v
+
+# Copy webapp directory from host to container and install packages 
+COPY frontend-example-docker frontend-example-docker
+RUN cd frontend-example-docker && npm install
+
+# When container is started start node
+CMD cd frontend-example-docker && npm start
+```
 
 
 
