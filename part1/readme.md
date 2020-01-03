@@ -144,6 +144,12 @@ The container responds with message ```Ports configured correctly!!```.
 ## 1.10
 
 
+Build the container:
+
+```
+$ docker build -t frontex .
+```
+
 
 
 
