@@ -42,13 +42,13 @@ Exit:
 
 Create the container: 
 
-```$ docker run -d -it --name ex1.5 ubuntu:16.04 sh -c "read x; echo 'Input website:'; read website; echo 'Searching ...'; sleep 1; curl http://$website"```
+```$ docker run -d -it ubuntu:16.04 sh -c 'echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website;'```
 
 An empty read command is added in the beginning of the shell command to wait for user to become attached before the Input website command is printed. 
 
 Install curl:
 
-```$ docker exec ex1.5 apt-get -qq update``` and ```$ docker exec ex1.5 apt-get -y -qq install curl```
+```$ docker exec 97 apt-get -qq update``` and ```$ docker exec 97 apt-get -y -qq install curl``
 
 Start the container with the shell process: 
 
@@ -56,9 +56,9 @@ Start the container with the shell process:
 
 Attach to the container: 
 
-```$ docker attach ex1.5```
+```$ docker attach 97```
 
-To get and print http://helsinki.fi content first hit enter and then type ```helsinki.fi``` and hit enter.
+Then type ```helsinki.fi``` and hit enter.
 
 Exit: 
 
