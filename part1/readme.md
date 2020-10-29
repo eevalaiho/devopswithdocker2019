@@ -5,24 +5,15 @@ Eeva-Maria Laiho
 
 ## 1.1
 
-![Exercise 1.1](1.1.PNG)
+![Exercise 1.1](1.1.png)
 
 ## 1.2
 
-![Exercise 1.2](1.2.PNG)
+![Exercise 1.2](1.2.png)
 
 ## 1.3
 
-To start the container:
-```docker run -it devopsdockeruh/pull_exercise```
-
-The script asks for password, that is ```basic```.
-
-After typing the password the script prints:
-```
-You found the correct password. Secret message is:
-"This is the secret message"
-```
+![Exercise 1.2](1.3.png)
 
 ## 1.4
 
