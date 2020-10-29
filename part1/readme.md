@@ -112,4 +112,128 @@ Run the container:
 ```$ docker run -it curler```
 
 
+## 1.8
+
+Create ```logs.txt``` file in ```$(pwd)``` folder (on host).
+
+Run the container:
+
+```
+$ docker run -v $(pwd)/logs.txt:/usr/app/logs.txt devopsdockeruh/first_volume_exercise 
+```
+
+The secret (printed in logs.txt) message:
+
+```
+Secret message is:
+"Volume bind mount is easy"
+```
+
+## 1.9
+
+Run the container:
+
+```
+$ docker run -p 8080:80 devopsdockeruh/ports_exercise 
+```
+
+Browse to ```http://localhost:8080```. 
+
+The container responds with message ```Ports configured correctly!!```.
+
+## 1.10
+
+Build the container:
+
+```
+$ docker build -t frontex .
+```
+
+Run the container with port 5000 attached to:
+
+```
+$ docker run -p 5000:5000 -it frontex
+```
+
+Browse to ```http://localhost:5000```. 
+
+The container responds with Webpack App front page.
+
+
+Dockerfile:
+
+```
+FROM ubuntu:16.04 
+
+WORKDIR /webapp
+
+# Install prerequisites
+RUN apt-get update && apt-get install -y curl
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash && apt install -y nodejs
+
+# Check install
+RUN node -v && npm -v
+
+# Copy webapp directory from host to container and install packages 
+COPY frontend-example-docker frontend-example-docker
+RUN cd frontend-example-docker && npm install
+
+# When container is started start node
+CMD cd frontend-example-docker && npm start
+```
+
+
+
+## 1.11
+
+Build the container:
+
+```
+$ docker build -t backex .
+```
+
+Run the container with port 8000 and volume logs.txt attached to it:
+
+```
+$ sudo docker run -it -v $(pwd)/logs.txt:/webserver/backend-example-docker/logs.txt -p 8000:8000 backex
+```
+
+Browse to ```http://localhost:8000```. 
+
+The container responds with message 'Port configured correctly, generated message in logs.txt'. The logs.txt file is appended with timestamp and connection received message. 
+
+Dockerfile:
+
+```
+FROM ubuntu:16.04 
+
+WORKDIR /webserver
+
+# Install prerequisites
+RUN apt-get update && apt-get install -y curl
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash && apt install -y nodejs
+
+# Check install
+RUN node -v && npm -v
+
+# Copy webapp directory from host to container and install packages 
+COPY backend-example-docker backend-example-docker
+RUN cd backend-example-docker && npm install
+
+# When container is started start node
+CMD cd backend-example-docker && npm start
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
 
